@@ -39,18 +39,21 @@ const getFormById = async (req, res) => {
 // Update a form
 const updateForm = async (req, res) => {
   const { id } = req.params;
-  const { formName, fields } = req.body;
+  const { formName, fields, status } = req.body;
+
   try {
     const updatedForm = await Form.findByIdAndUpdate(
       id,
-      { formName, fields },
+      { formName, fields, status }, // Include status
       { new: true }
     );
+
     res.status(200).json(updatedForm);
   } catch (err) {
     res.status(500).json({ message: "Error updating form", error: err.message });
   }
 };
+
 
 // Delete a form
 const deleteForm = async (req, res) => {
