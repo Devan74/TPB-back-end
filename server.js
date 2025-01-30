@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./db/db');
-const employeeRoutes = require('./routes/employeeRoutes');
 const formRoutes = require("./routes/formRoutes");
 const authRoutes = require("./routes/authRoutes");
 
@@ -18,7 +17,6 @@ connectDB("*");
 
 // Routes
 
-app.use('/api/employees', employeeRoutes);
 app.use("/api/forms", formRoutes);
 app.use('/api/auth', authRoutes);
 
