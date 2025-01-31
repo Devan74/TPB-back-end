@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./db/db');
 const formRoutes = require("./routes/formRoutes");
 const authRoutes = require("./routes/authRoutes");
+const docTypeRoutes = require("./routes/docTypeRoutes");
 
 
 dotenv.config();
@@ -19,6 +20,7 @@ connectDB("*");
 
 app.use("/api/forms", formRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/doctypes', docTypeRoutes);
 
 
 const PORT = process.env.PORT || 8000;
