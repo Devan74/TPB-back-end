@@ -39,12 +39,12 @@ const getFormById = async (req, res) => {
 // Update a form
 const updateForm = async (req, res) => {
   const { id } = req.params;
-  const { formName, fields, status } = req.body;
+  const { formName, fields, status, type } = req.body;
 
   try {
     const updatedForm = await Form.findByIdAndUpdate(
       id,
-      { formName, fields, status }, // Include status
+      { formName, fields, status, type },
       { new: true }
     );
 
