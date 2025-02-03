@@ -41,10 +41,13 @@ const formSchema = new mongoose.Schema(
       enum: ["active", "inactive"],
       required: true,
     },
-    type: {
+    docType:{
       type: String,
       required: true,
-      enum: ["Doc Type", "Sub Doc Type"],
+    },
+    subDocType:{
+      type: String,
+      required: true,
     },
   },
   {

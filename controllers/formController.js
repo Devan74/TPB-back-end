@@ -1,10 +1,10 @@
 const Form = require("../models/Form");
 
-// Create a new form
+// Create a new form updated doctype & subDocType
 const createForm = async (req, res) => {
-  const { formName, fields, status, type } = req.body;
+  const { formName, fields, status, docType, subDocType } = req.body;
   try {
-    const newForm = new Form({ formName, fields, status, type });
+    const newForm = new Form({ formName, fields, status, docType, subDocType });
     await newForm.save();
     res.status(201).json(newForm);
   } catch (err) {
